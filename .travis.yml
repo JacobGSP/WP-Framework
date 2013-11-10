@@ -1,2 +1,16 @@
+# https://travis-ci.org
+language: php
+
 php:
-  - "5.4"
+  - 5.3
+  - 5.4
+  
+# WordPress specific
+env:
+    - WP_VERSION=master WP_MULTISITE=0
+    
+#before_script:
+#    - wget https://raw.github.com/benbalter/wordpress-plugin-tests/setup/setup.sh
+#    - source setup.sh
+
+script: phpunit
